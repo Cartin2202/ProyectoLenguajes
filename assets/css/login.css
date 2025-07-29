@@ -1,0 +1,58 @@
+body {
+    background-image: url('../img/Fondo.png');
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+
+}
+
+h2 {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.login {
+    background-color: rgb(255, 255, 255);
+    border-radius: 45px;
+    padding: 20px 20px;
+    text-align: center;
+}
+
+.logo {
+    width: 50%;
+}
+
+.form {
+    padding: 10px;
+}
+
+p {
+    text-decoration: underline;
+    color: blue;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+}
+
+input {
+    border-radius: 10px;
+    padding: 20px 10px;
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    width: 80%;
+}
+
+.btn-login {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    padding: 15px 100px;
+    border-radius: 10px;
+    background-color: rgb(34, 72, 185);
+    -webkit-text-fill-color: rgb(255, 255, 255);
+    border-color: rgb(34, 72, 185);
+
+}
+
+.btn-login:hover {
+  background-color: rgb(69, 66, 255);
+}

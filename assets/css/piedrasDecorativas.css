@@ -1,0 +1,74 @@
+/* Fondo general */
+.body {
+  background-color: #F4F4F4;
+  color: #2E2E2E;
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* Navbar */
+.navbar {
+  background-color: #D6CFC4 !important;
+  padding: 1rem 0;
+}
+
+.navbar-brand,
+.navbar-nav .nav-link {
+  color: #2E2E2E !important;
+  font-weight: 500;
+}
+
+.navbar-nav .nav-link.active,
+.navbar-nav .nav-link:hover {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+/* Cards de productos */
+.custom-card {
+  background-color: #8B5E3C !important;
+  color: white;
+  border: none;
+  transition: transform 0.2s ease-in-out;
+}
+
+.custom-card:hover {
+  transform: translateY(-5px);
+}
+
+.custom-card .card-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.custom-card .card-text {
+  font-size: 0.95rem;
+}
+
+/* Imagenes de productos */
+.card-img-top {
+  object-fit: cover;
+  height: 200px;
+  border-radius: 0.5rem;
+}
+
+/* Select de categorías */
+select.form-select {
+  background-color: #fff;
+  border: 2px solid #8B5E3C;
+  color: #2E2E2E;
+}
+
+/* Secciones */
+section {
+  background-color: #D6CFC4;
+  border-radius: 10px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+
+/* Footer */
+footer {
+  background-color: #2E2E2E;
+  color: #fff;
+  font-size: 0.85rem;
+}

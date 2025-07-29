@@ -1,0 +1,22 @@
+.body {
+    background-color: #F4F4F4;
+    color: #2E2E2E;
+}
+
+.navbar{
+    background-color: #D6CFC4;
+    color: #2E2E2E;
+}
+
+section {
+    background-color: #D6CFC4;
+}
+
+#contact {
+    background-color: #7D7D7D;
+}
+
+.custom-card {
+    background-color: #8B5E3C !important;
+    color: white;
+}
