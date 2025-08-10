@@ -5,17 +5,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login</title>
+  <link rel="stylesheet" href="assets/css/login.css">
 
-  <link rel="stylesheet" href="/G2_SC504_LN_PROYECTO/assets/css/login.css">
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
 <body>
-
   <div class="container">
     <div class="login">
-      <img class="logo" src="/G2_SC504_LN_PROYECTO/assets/img/image.png" alt="Logo">
+      <img class="logo" src="assets/img/image.png" alt="Logo">
 
       <h2>Ingrese sus credenciales</h2>
 
@@ -27,7 +26,6 @@
           <input type="password" name="contrasena" placeholder="Contraseña" required>
         </div>
         <div>
-          <p>¿Olvidó su contraseña?</p>
         </div>
 
         <button class="btn-login" type="submit">

@@ -1,10 +1,22 @@
 <?php
-function conectar() {
-    $conn = oci_connect("FIDE_LENG_PROYECTO", "123", "localhost/XE");
-    if (!$conn) {
-        $e = oci_error();
-        die("❌ Error de conexión: " . $e['message']);
+class Conexion {
+    private $conn;
+
+    public function __construct() {
+        $username = "FIDE_LENG_PROYECTO";
+        $password = "123";
+        $connection_string = "localhost/XE";
+
+        $this->conn = oci_connect($username, $password, $connection_string);
+
+        if (!$this->conn) {
+            $e = oci_error();
+            throw new Exception("Error de conexión: " . $e['message']);
+        }
     }
-    return $conn;
+
+    public function getConexion() {
+        return $this->conn;
+    }
 }
 ?>

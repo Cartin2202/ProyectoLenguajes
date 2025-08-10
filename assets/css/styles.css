@@ -20,3 +20,359 @@ section {
     background-color: #8B5E3C !important;
     color: white;
 }
+
+/* Navbar con degradado sutil y blur */
+.my-navbar {
+  background: linear-gradient(90deg, #111 0%, #1f1f1f 100%) !important;
+  backdrop-filter: blur(6px);
+}
+
+/* Links más “píldora” y estados */
+.navbar .nav-link {
+  transition: all .2s ease;
+}
+.navbar .nav-link:hover {
+  background: rgba(255,255,255,.08);
+}
+.navbar .nav-link.active {
+  background: hsl(184, 62%, 56%); /* o tu color */
+  color: #fff !important;
+}
+
+/* Dropdown más moderno */
+.dropdown-menu {
+  border: 0;
+  border-radius: 1rem;
+  padding: .5rem;
+  background-color: #fd7dcc;
+}
+.dropdown-item {
+  border-radius: .5rem;
+  color: #ffffff;
+}
+.dropdown-item:hover {
+  background: rgba(13,110,253,.12);
+}
+
+/* --- HERO --- */
+.hero-section {
+  position: relative;
+  padding-left: 20px;
+  overflow: hidden;
+  background: #EFEAE2; 
+  margin-top: 2rem; /* separa 2rem del navbar */
+}
+.hero-section .container {
+  position: relative; z-index: 1;
+}
+.btn-hero {
+  background-color: hsl(184, 62%, 56%); /* marrón de tus tarjetas */
+  color: #fff;
+  border: none;
+  transition: transform .15s ease, opacity .2s ease;
+}
+.btn-hero:hover { background-color: #fd7dcc; }
+
+/* --- SECCIONES BASE --- */
+.section-box {
+  background-color: #121212; /* beige del navbar/sections */
+  color: #ffffff;
+  position: relative; /* necesario para que el ::before se posicione bien */
+  padding: 3rem 2rem; /* añade espacio para que se vea equilibrado */
+  border-radius: 1rem;
+}
+
+.section-box2 {
+  background-color: #EFEAE2; /* beige del navbar/sections */
+  color: #121212;
+  margin-bottom: 2rem;
+}
+
+.section-box::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 1rem;
+  bottom: 1rem;
+  width: 6px;
+  border-radius: 6px;
+  background: #fd7dcc; /* turquesa de tu paleta */
+}
+
+.section-soft {
+  background-color: #EFEAE2; /* un beige más suave para contrastar */
+  color: #121212;
+}
+
+/* --- IMAGEN MARCO --- */
+.image-frame {
+  background: hsl(184, 62%, 56%);
+  padding: .5rem;
+}
+
+/* --- TARJETAS DE VALORES --- */
+.value-card {
+  background: #fd7dcc; /* limpio para legibilidad */
+  border: 1px solid rgba(255, 0, 0, 0.06);
+  transition: box-shadow .2s ease, transform .15s ease, background .2s ease, color .2s ease;
+}
+.value-card:hover {
+  box-shadow: 0 10px 24px rgba(0,0,0,.12);
+  transform: translateY(-2px);
+  background: hsl(184, 62%, 56%); /* acento de tu paleta */
+  color: #fff;
+}
+.value-card:hover h5 { color: #fff; }
+
+/* --- TITULARES COHERENTES --- */
+.section-box h1, .section-box h2, .section-box h3,
+.section-soft h1, .section-soft h2, .section-soft h3 {
+  letter-spacing: .3px;
+}
+
+/* Variante clara (coherente con tu paleta) */
+.about-section {
+  background: #978a8a;          /* beige suave */
+  color: #ffffff;
+  padding: 3rem 0;
+  position: relative;
+}
+
+/* Detalle acento lateral opcional */
+.about-section::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 1rem;
+  bottom: 1rem;
+  width: 6px;
+  border-radius: 6px;
+  background: hsl(184, 62%, 56%); /* turquesa de tu navbar/active */
+}
+
+/* Imagen con marco/acento (ya tienes .image-frame; lo reforzamos) */
+.about-section .image-frame {
+  background: #fd7dcc;          /* beige piedra */
+  padding: .5rem;
+  border-radius: 1rem;
+}
+.about-section img {
+  display: block;
+  border-radius: .8rem;
+}
+
+/* Tipografía */
+.about-section h3 { letter-spacing: .2px; }
+.about-section p  { line-height: 1.65; }
+
+/* Si aún te “gana” alguna regla global, usa mayor especificidad o !important: */
+section.about-section { background: #121212 !important; }
+
+/* Botón acento (igual que nav-link.active/btn-hero) */
+.btn-accent {
+  background: hsl(184, 62%, 56%);
+  color: #fff;
+  border: none;
+  transition: transform .15s ease, opacity .2s ease;
+}
+.btn-accent:hover { opacity:.9; transform: translateY(-1px); }
+
+/* Versión outline del acento */
+.btn-outline-accent {
+  border: 1px solid hsl(184, 62%, 56%);
+  color: hsl(184, 62%, 56%);
+  background: transparent;
+  transition: transform .15s ease, background .2s ease, color .2s ease;
+}
+.btn-outline-accent:hover {
+  background: hsl(184, 62%, 56%);
+  color:#fff;
+  transform: translateY(-1px);
+}
+
+/* Barra de filtro coherente con tu diseño */
+.filter-bar {
+  background: #EFEAE2;        /* suave beige */
+  border: 1px solid rgba(0,0,0,.06);
+}
+.filter-bar .form-select {
+  min-width: 240px;
+  border-radius: 999px;
+  border: 1px solid rgba(0,0,0,.1);
+}
+
+/* Tarjeta de producto */
+.product-card {
+  border: 1px solid rgba(0,0,0,.06);
+  transition: box-shadow .2s ease, transform .15s ease;
+}
+.product-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(0,0,0,.12);
+}
+
+/* Imagen con proporción consistente */
+.product-thumb img {
+  object-fit: cover;
+}
+
+/* Acento sutil en el footer de la tarjeta al hover */
+.product-card:hover .card-footer {
+  background: rgba(0,0,0,.02);
+}
+
+/* Títulos y textos */
+.product-card .card-title { letter-spacing: .2px; }
+.product-card .card-text  { line-height: 1.5; }
+
+/* Botón acento */
+.btn-accent {
+  background: hsl(184, 62%, 56%);
+  color: #fff;
+  border: none;
+  transition: transform .15s ease, opacity .2s ease;
+}
+.btn-accent:hover { opacity:.9; transform: translateY(-1px); }
+
+/* Tabla elegante, coherente con section-box */
+.table-elegant {
+  background: #fff;
+  border: 1px solid rgba(0,0,0,.06);
+}
+.table-elegant thead {
+  background: #EFEAE2; /* beige suave */
+}
+.table-elegant thead th {
+  border: 0;
+  color: #2E2E2E;
+  font-weight: 700;
+}
+.table-elegant tbody td {
+  border-top-color: rgba(0,0,0,.06);
+}
+
+/* Botones outline coherentes */
+.btn-outline-secondary {
+  border-color: rgba(0,0,0,.2);
+  color: #2E2E2E;
+  background: transparent;
+}
+.btn-outline-secondary:hover {
+  background: rgba(0,0,0,.06);
+  color: #2E2E2E;
+}
+.btn-outline-danger {
+  border-color: rgba(220,53,69,.6);
+}
+
+/* Ajustes visuales de la section */
+.section-box {
+  position: relative;
+  border-radius: 1rem;
+}
+
+/* ===== Inventario (coherente con tu paleta) ===== */
+
+/* Contenedor principal (ya usas .section-box en otras vistas) */
+.section-box {
+  position: relative;
+  border-radius: 1rem;
+  background-color: #D6CFC4; /* beige piedra */
+  color: #2E2E2E;
+  padding: 0; /* el padding lo pone .container interno */
+}
+/* Acento lateral turquesa (como about-section) */
+.section-box::before {
+  content: "";
+  position: absolute;
+  left: 0; top: 1rem; bottom: 1rem;
+  width: 6px; border-radius: 6px;
+  background: hsl(184, 62%, 56%);
+}
+
+/* Tarjetas que envuelven formularios */
+.form-card {
+  background: #FFFFFF;
+  border: 1px solid rgba(0,0,0,.06);
+  box-shadow: 0 4px 14px rgba(0,0,0,.06);
+}
+
+/* Labels y controles */
+.form-label {
+  margin-bottom: .35rem;
+}
+.form-control.rounded-pill,
+.form-select.rounded-pill {
+  border-radius: 999px;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  border: 1px solid rgba(0,0,0,.12);
+}
+.form-control:focus,
+.form-select:focus {
+  border-color: hsl(184, 62%, 56%);
+  box-shadow: 0 0 0 .2rem rgba(0, 173, 181, .15); /* halo turquesa */
+}
+
+/* Botones acento */
+.btn-accent {
+  background: hsl(184, 62%, 56%);
+  color: #fff;
+  border: none;
+  transition: transform .15s ease, opacity .2s ease;
+}
+.btn-accent:hover { opacity:.9; transform: translateY(-1px); }
+
+/* Botón acento contorno */
+.btn-outline-accent {
+  border: 1px solid hsl(184, 62%, 56%);
+  color: hsl(184, 62%, 56%);
+  background: transparent;
+  transition: transform .15s ease, background .2s ease, color .2s ease;
+}
+.btn-outline-accent:hover {
+  background: hsl(184, 62%, 56%);
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+/* Ajuste botón warning para que no desentone */
+.btn-warning {
+  border: none;
+  color: #1f1f1f;
+}
+.btn-warning:hover {
+  filter: brightness(.95);
+  transform: translateY(-1px);
+  transition: transform .15s ease, filter .2s ease;
+  border: none;
+}
+
+/* Tabla elegante (misma que categorías) */
+.table-elegant {
+  background: #fff;
+  border: 1px solid rgba(0,0,0,.06);
+  width: 100%;
+}
+.table-elegant thead {
+  background: #EFEAE2; /* beige suave */
+}
+.table-elegant thead th {
+  border: 0;
+  color: #2E2E2E;
+  font-weight: 700;
+}
+.table-elegant tbody td {
+  border-top-color: rgba(0,0,0,.06);
+}
+
+/* Helpers */
+.rounded-4 { border-radius: 1rem !important; }
+.shadow-sm { box-shadow: 0 6px 20px rgba(0,0,0,.08) !important; }
+
+/* Responsive afinado */
+@media (max-width: 576px) {
+  .section-box::before { top: .75rem; bottom: .75rem; }
+  .form-control.rounded-pill, .form-select.rounded-pill { padding-left: .9rem; padding-right: .9rem; }
+}
+

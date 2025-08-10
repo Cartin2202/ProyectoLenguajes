@@ -1,0 +1,9 @@
+Piedras & Enchapes
+FACTURA
+Venta: 304
+Fecha: 08-AUG-25 08.36.41.079000 PM
+Cliente ID: 119590284
+----------------------------------------
+Enchape Granito Gris  x1  = 26000.00
+----------------------------------------
+TOTAL: 26000.00
