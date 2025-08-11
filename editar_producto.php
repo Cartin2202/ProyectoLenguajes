@@ -16,7 +16,6 @@ if (!$producto) {
     exit();
 }
 
-// Al enviar formulario
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $nombre = $_POST['nombre'];
     $descripcion = $_POST['descripcion'];

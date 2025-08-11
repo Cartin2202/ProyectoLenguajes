@@ -16,9 +16,7 @@ if (isset($_GET['gen_txt'])) {
   $archivoTxt = $vc->generarFacturaTxt($idVenta);
 }
 
-// (Opcional) incluye header/navbar si quieres el layout general
-// include('views/partials/header.php');
-// include('views/partials/navbar.php');
+
 ?>
 <!doctype html>
 <html lang="es">
@@ -26,7 +24,6 @@ if (isset($_GET['gen_txt'])) {
   <meta charset="utf-8" />
   <title>Factura #<?= htmlspecialchars($idFactura) ?></title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <!-- Bootstrap + tu CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/styles.css?v=1">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
@@ -36,7 +33,6 @@ if (isset($_GET['gen_txt'])) {
 <section class="section-box rounded-4 shadow-sm my-4">
   <div class="container py-4">
 
-    <!-- Encabezado -->
     <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-3">
       <h2 class="m-0 fw-bold">
         <i class="bi bi-receipt me-2"></i> Factura #<?= htmlspecialchars($idFactura) ?>
@@ -49,7 +45,6 @@ if (isset($_GET['gen_txt'])) {
       </div>
     </div>
 
-    <!-- Resumen -->
     <div class="form-card rounded-4 p-3 p-md-4 mb-4">
       <div class="row g-3">
         <div class="col-md-3">
@@ -71,7 +66,6 @@ if (isset($_GET['gen_txt'])) {
       </div>
     </div>
 
-    <!-- Detalle -->
     <div class="table-responsive rounded-4 overflow-hidden shadow-sm mb-3">
       <table class="table table-elegant align-middle mb-0">
         <thead>
@@ -98,7 +92,6 @@ if (isset($_GET['gen_txt'])) {
       </table>
     </div>
 
-    <!-- Acciones TXT -->
     <div class="d-flex flex-wrap gap-2">
       <a href="?venta=<?= urlencode($idVenta) ?>&id_factura=<?= urlencode($idFactura) ?>&gen_txt=1"
          class="btn btn-outline-accent rounded-pill">
@@ -120,7 +113,6 @@ if (isset($_GET['gen_txt'])) {
   </div>
 </section>
 
-<!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

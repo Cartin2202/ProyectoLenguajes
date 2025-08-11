@@ -12,10 +12,8 @@ $cliente = $controller->obtenerClientesPorCedula($cedula);
   <meta charset="UTF-8">
   <title>Actualizar Cliente</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <!-- Bootstrap + tu CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/styles.css?v=1">
-  <!-- (Opcional) Icons -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
 </head>
 <body>
@@ -108,7 +106,6 @@ $cliente = $controller->obtenerClientesPorCedula($cedula);
   </div>
 </section>
 
-<!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 

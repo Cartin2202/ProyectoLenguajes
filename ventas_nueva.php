@@ -15,9 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 $clientes = $vc->listarClientes();
 
-// (Opcional) incluye tu header/navbar global
-// include('views/partials/header.php');
-// include('views/partials/navbar.php');
+
 ?>
 <!doctype html>
 <html lang="es">
@@ -25,10 +23,8 @@ $clientes = $vc->listarClientes();
   <meta charset="utf-8" />
   <title>Nueva venta</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <!-- Bootstrap + tu CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/styles.css?v=1">
-  <!-- (Opcional) Icons -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
 </head>
 <body>
@@ -69,7 +65,6 @@ $clientes = $vc->listarClientes();
   </div>
 </section>
 
-<!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

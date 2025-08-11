@@ -17,16 +17,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   }
 }
 
-// Productos activos (simple)
 $conn = (new Conexion())->getConexion();
 $q = oci_parse($conn, "SELECT id_producto, nombre FROM FIDE_PRODUCTO_TB WHERE id_estado = 1 ORDER BY nombre");
 oci_execute($q); $prods=[]; while($r=oci_fetch_assoc($q)) $prods[]=$r;
 
 $detalle = $vc->listarDetalleVenta($idVenta);
 
-// (Opcional) incluye tus parciales si quieres navbar/header global
-// include('views/partials/header.php');
-// include('views/partials/navbar.php');
+
 ?>
 <!doctype html>
 <html lang="es">
@@ -34,11 +31,8 @@ $detalle = $vc->listarDetalleVenta($idVenta);
   <meta charset="utf-8">
   <title>Editar venta #<?= htmlspecialchars($idVenta) ?></title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <!-- Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Tu CSS -->
   <link rel="stylesheet" href="assets/css/styles.css?v=1">
-  <!-- (Opcional) Icons -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
 </head>
 <body>
@@ -46,7 +40,6 @@ $detalle = $vc->listarDetalleVenta($idVenta);
 <section class="section-box rounded-4 shadow-sm my-4">
   <div class="container py-4">
 
-    <!-- Encabezado -->
     <div class="d-flex flex-wrap justify-content-between align-items-center mb-3 gap-2">
       <h2 class="m-0 fw-bold">Editar venta #<?= htmlspecialchars($idVenta) ?></h2>
       <div class="small text-muted">
@@ -55,7 +48,6 @@ $detalle = $vc->listarDetalleVenta($idVenta);
       </div>
     </div>
 
-    <!-- Agregar producto -->
     <div class="form-card rounded-4 p-3 p-md-4 mb-4">
       <h5 class="fw-bold mb-3"><i class="bi bi-cart-plus me-2"></i>Agregar producto</h5>
       <form method="post" class="row g-3 align-items-end">
@@ -80,7 +72,6 @@ $detalle = $vc->listarDetalleVenta($idVenta);
       </form>
     </div>
 
-    <!-- Detalle -->
     <div class="table-responsive rounded-4 overflow-hidden shadow-sm">
       <table class="table table-elegant align-middle mb-0">
         <thead>
@@ -106,7 +97,7 @@ $detalle = $vc->listarDetalleVenta($idVenta);
         </tbody>
         <?php
           $totalVenta = $venta['TOTAL'];
-          if ($totalVenta === null) $totalVenta = $acum; // fallback
+          if ($totalVenta === null) $totalVenta = $acum; 
         ?>
         <tfoot>
           <tr>
@@ -117,7 +108,6 @@ $detalle = $vc->listarDetalleVenta($idVenta);
       </table>
     </div>
 
-    <!-- Acciones -->
     <div class="d-flex flex-wrap gap-2 mt-3">
       <a href="ventas_cerrar.php?id=<?= urlencode($idVenta) ?>" class="btn btn-accent rounded-pill">
         <i class="bi bi-receipt-cutoff me-1"></i> Cerrar venta
@@ -130,7 +120,6 @@ $detalle = $vc->listarDetalleVenta($idVenta);
   </div>
 </section>
 
-<!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

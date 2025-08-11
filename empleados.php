@@ -4,9 +4,9 @@ require_once 'controllers/EmpleadosController.php';
 $controller = new EmpleadosController();
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $action = $_GET['action'] ?? '';
+    $accion = $_GET['accion'] ?? '';   // <-- aquí cambiamos a 'accion'
 
-    switch ($action) {
+    switch ($accion) {
         case 'registrar':
             $controller->registrarEmpleado($_POST);
             break;
@@ -23,15 +23,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             break;
     }
 
-    // Redirigir después de acción POST para evitar reenviar formulario al recargar
     header("Location: empleados.php");
     exit();
 }
 
 // Si no es POST, carga la vista correspondiente
-$action = $_GET['accion'] ?? 'consultar';
+$accion = $_GET['accion'] ?? 'consultar';
 
-switch ($action) {
+switch ($accion) {
     case 'registrar':
         include 'registrar_empleado.php';
         break;

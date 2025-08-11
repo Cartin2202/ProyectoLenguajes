@@ -11,13 +11,13 @@ class InventarioController
         $this->conn = $conexion->getConexion();
     }
 
-    // Mostrar vista de inventario
+    // vista inventario
     public function mostrarReporte()
     {
         include __DIR__ . '/../views/inventario_view.php';
     }
 
-    // Insertar movimiento de inventario
+    
     public function insertarMovimiento($tipo, $motivo)
     {
         $stmt = oci_parse($this->conn, "BEGIN FIDE_PIEDRAS_ENCHAPES_PKG.FIDE_MOVIMIENTO_INVENTARIO_TB_INSERTAR_SP(:tipo, :motivo); END;");
@@ -26,7 +26,6 @@ class InventarioController
         oci_execute($stmt);
     }
 
-    // Asociar producto a movimiento
     public function insertarMovimientoProducto($id_movimiento, $id_producto, $cantidad)
     {
         $stmt = oci_parse($this->conn, "BEGIN FIDE_PIEDRAS_ENCHAPES_PKG.FIDE_MOVIMIENTO_PRODUCTO_TB_INSERTAR_SP(:mov, :prod, :cant); END;");

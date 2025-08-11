@@ -4,10 +4,8 @@
   <meta charset="UTF-8" />
   <title>Eliminar Cliente</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <!-- Bootstrap + tu CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/styles.css?v=1">
-  <!-- (opcional) íconos -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
 </head>
 <body>
@@ -29,14 +27,12 @@
         </div>
 
         <div class="d-flex gap-2">
-          <!-- Botón que abre el modal -->
           <button type="button" class="btn btn-danger rounded-pill" data-bs-toggle="modal" data-bs-target="#confirmModal">
             <i class="bi bi-trash me-1"></i> Eliminar
           </button>
           <a href="clientes.php" class="btn btn-outline-secondary rounded-pill">Cancelar</a>
         </div>
 
-        <!-- Modal de confirmación -->
         <div class="modal fade" id="confirmModal" tabindex="-1" aria-labelledby="confirmModalLabel" aria-hidden="true">
           <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content rounded-4">
@@ -49,7 +45,6 @@
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-outline-secondary rounded-pill" data-bs-dismiss="modal">Cancelar</button>
-                <!-- Botón submit que envía el formulario -->
                 <button type="submit" class="btn btn-danger rounded-pill">
                   <i class="bi bi-check2-circle me-1"></i> Sí, eliminar
                 </button>
@@ -57,14 +52,12 @@
             </div>
           </div>
         </div>
-        <!-- /Modal -->
       </form>
     </div>
 
   </div>
 </section>
 
-<!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

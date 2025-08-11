@@ -12,7 +12,7 @@ if (isset($_GET['action']) && $_GET['action'] == 'eliminar' && isset($_GET['id']
 $id_categoria = $_GET['categoria'] ?? null;
 $productos = $model->obtenerProductos($id_categoria);
 $categorias = $model->obtenerCategorias();
-$materiales = $model->obtenerMateriales();   // ← AGREGAR
-$pesos = $model->obtenerPesos();             // ← AGREGAR
+$materiales = $model->obtenerMateriales();   
+$pesos = $model->obtenerPesos();             
 
 include 'views/productos_view.php';

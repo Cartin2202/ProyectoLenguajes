@@ -13,7 +13,6 @@ include('views/partials/navbar.php');
 
     <div class="d-flex flex-wrap justify-content-between align-items-center mb-4 gap-2">
       <h2 class="m-0 fw-bold">Lista de Movimientos de Inventario</h2>
-      <!-- Acción opcional (exportar / ir al módulo) -->
       <div class="d-flex gap-2">
         <a href="inventario.php" class="btn btn-outline-accent rounded-pill">
           <i class="bi bi-gear"></i> Ir al módulo
@@ -53,5 +52,4 @@ include('views/partials/navbar.php');
   </div>
 </section>
 
-<!-- Carga Bootstrap JS solo si no lo incluyes ya en header.php -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>

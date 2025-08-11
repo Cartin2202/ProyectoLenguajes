@@ -3,7 +3,6 @@ require_once 'controllers/ClientesController.php';
 
 $controller = new ClientesController();
 
-// Ejecutar acciones según el parámetro `action`
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $action = $_GET['accion'] ?? '';
 

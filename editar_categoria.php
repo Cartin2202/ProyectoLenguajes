@@ -3,7 +3,6 @@ require_once 'models/CategoriasModel.php';
 
 $model = new CategoriasModel();
 
-// Validar que venga el ID
 if (!isset($_GET['id'])) {
     header('Location: categorias.php');
     exit();
@@ -17,7 +16,6 @@ if (!$categoria) {
     exit();
 }
 
-// Al enviar el formulario
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $nombre = $_POST['nombre'];
     $descripcion = $_POST['descripcion'];

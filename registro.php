@@ -6,7 +6,7 @@
     <h2 class="mb-4 text-center">Registro de Usuario</h2>
     <div class="row justify-content-center">
       <div class="col-md-8">
-        <form method="post" action="/G2_SC504_LN_PROYECTO/controllers/InsertarUsuarioController.php">
+        <form method="post" action="controllers/InsertarUsuarioController.php">
           <div class="row g-3">
             <div class="col-md-6">
               <label class="form-label">Cédula</label>

@@ -3,7 +3,6 @@ require_once 'models/CategoriasModel.php';
 
 $model = new CategoriasModel();
 
-// Si se envió el formulario
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $nombre = $_POST['nombre'];
     $descripcion = $_POST['descripcion'];

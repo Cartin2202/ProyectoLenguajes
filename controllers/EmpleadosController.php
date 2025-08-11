@@ -16,7 +16,7 @@ class EmpleadosController
         include 'views/empleados_view.php';
     }
 
-    // ✅ Método agregado para que funcione empleados.php
+    // metodo agregado para que funcione empleados.php
     public function listarEmpleados()
     {
         return $this->model->listarEmpleados();
@@ -24,7 +24,7 @@ class EmpleadosController
 
     public function registrarEmpleado($datos)
     {
-        // Convertir la fecha al formato YYYY-MM-DD (lo espera el TO_TIMESTAMP)
+        // convertir la fecha al formato YYYY-MM-DD (TO_TIMESTAMP) que es el puesto en la bd
         $datos['fecha'] = date('Y-m-d', strtotime($datos['fecha']));
         $this->model->insertarEmpleado($datos);
     }

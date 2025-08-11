@@ -10,7 +10,7 @@ class ClientesController
         $this->model = new ClientesModel();
     }
 
-    // ✅ Método agregado para que funcione empleados.php
+    // metodo agregado para que funcione empleados.php
     public function registrarClientes($datos) {
         $this->model->insertarClientes(
             $datos['cedula'],
@@ -49,7 +49,7 @@ class ClientesController
         return $this->model->obtenerClientesPorCedula($cedula);
         
     }
-    // Detalle de Ventas
+    // detalle de las vventas
     public function obtenerVentasPorCliente($cedula) {
         return $this->model->obtenerVentasPorCliente($cedula);
     }

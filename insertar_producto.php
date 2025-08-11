@@ -3,7 +3,6 @@ require_once 'models/ProductosModel.php';
 
 $model = new ProductosModel();
 
-// Procesar envío del formulario
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $nombre = $_POST['nombre'];
     $descripcion = $_POST['descripcion'];
@@ -17,7 +16,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     exit();
 }
 
-// Obtener listas para selects
 $categorias = $model->obtenerCategorias();
 $materiales = $model->obtenerMateriales();
 $pesos = $model->obtenerPesos();

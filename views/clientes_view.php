@@ -66,7 +66,6 @@ include('partials/navbar.php');
 </section>
 
 <?php if ($clienteDetalle): ?>
-  <!-- Modal Detalle Cliente (mostrado si hay ?cedula=...) -->
   <div class="modal fade show d-block" id="modalClienteDetalle" tabindex="-1" aria-labelledby="labelClienteDetalle" aria-modal="true" role="dialog" style="background: rgba(0,0,0,.35);">
     <div class="modal-dialog modal-lg modal-dialog-centered">
       <div class="modal-content rounded-4">
@@ -99,6 +98,5 @@ include('partials/navbar.php');
   </div>
 <?php endif; ?>
 
-<!-- Bootstrap JS (si no lo cargas en header.php) -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 

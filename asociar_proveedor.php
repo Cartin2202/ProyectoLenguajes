@@ -7,7 +7,7 @@ $controller = new ProveedoresController();
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $idProveedor = $_POST['id_proveedor'];
     $idProducto = $_POST['id_producto'];
-    $controller->asociarProductoProveedor($idProveedor, $idProducto);
+    $controller->asociarProductoProveedor($id_proveedor, $id_producto);
     echo "<div class='alert alert-success text-center'>Producto asociado al proveedor correctamente.</div>";
 }
 ?>

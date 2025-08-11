@@ -7,11 +7,8 @@
   <meta charset="UTF-8" />
   <title>Categorías de Productos</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <!-- Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Bootstrap Icons -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
-  <!-- CSS -->
   <link rel="stylesheet" href="assets/css/styles.css?v=3">
 </head>
 <body class="bg-light">
@@ -71,7 +68,6 @@
     </div>
   </section>
 
-  <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

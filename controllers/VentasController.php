@@ -10,7 +10,7 @@ class VentasController
         $this->conn = $conexion->getConexion();
     }
 
-    # ------- LISTADOS -------
+
     public function listarVentas()
     {
         $stmt = oci_parse($this->conn, "BEGIN FIDE_PIEDRAS_ENCHAPES_PKG.FIDE_VENTAS_TB_LISTAR_SP(:c); END;");
@@ -54,7 +54,6 @@ class VentasController
         return $row;
     }
 
-    # ------- UTILIDADES (combos/soporte) -------
     public function listarClientes()
     {
         $stmt = oci_parse($this->conn, "BEGIN FIDE_PIEDRAS_ENCHAPES_PKG.FIDE_USUARIOS_TB_LISTAR_CLIENTES_SP(:c); END;");
@@ -83,8 +82,7 @@ class VentasController
         return $out;
     }
 
-    # ------- FACTURA TXT -------
-    // controllers/VentasController.php
+    //genera la factura
     public function generarFacturaTxt($ventaId)
     {
         $venta   = $this->obtenerVenta($ventaId);
@@ -108,14 +106,14 @@ class VentasController
         $lines[] = str_repeat('-', 40);
         $lines[] = sprintf("TOTAL: %.2f", $total);
 
-        // Guardar en carpeta del proyecto: /facturas_txt
-        $dir = dirname(__DIR__) . '/facturas_txt'; // sube desde /controllers a raíz del proyecto
+        //se guarda en la carpeta del proyecto: /facturas_txt
+        $dir = dirname(__DIR__) . '/facturas_txt'; 
         if (!is_dir($dir)) mkdir($dir, 0777, true);
 
         $file = $dir . '/factura_' . date('Ymd_His') . "_venta_{$ventaId}.txt";
         file_put_contents($file, implode(PHP_EOL, $lines));
 
-        return $file; // ruta absoluta del archivo por si la quieres loguear
+        return $file; 
     }
 
     public function crearVenta($cedulaCliente)
@@ -126,7 +124,6 @@ class VentasController
         oci_bind_by_name($stmt, ":ced", $cedulaCliente);
         oci_execute($stmt);
 
-        // obtener id_venta recién creado
         $q = oci_parse($this->conn, "
     SELECT id_venta FROM FIDE_VENTAS_TB 
      WHERE cedula=:ced ORDER BY fecha_venta DESC FETCH FIRST 1 ROW ONLY");
@@ -178,15 +175,14 @@ class VentasController
             throw new Exception('No hay items para registrar.');
         }
 
-        // 1) Cabecera
+        // Cabecera
         $idVenta = $this->crearVenta($cedulaCliente);
         if (!$idVenta) {
             throw new Exception('No se pudo crear la venta.');
         }
 
-        // 2) Detalle (usa trigger para precio y suma al total)
+        // Detalle (se usa el trigger para precio y suma al total)
         foreach ($items as $it) {
-            // Espera keys: id, cantidad  (precio/nombre no son necesarios para la BD)
             $idProd = (int)($it['id'] ?? 0);
             $cant   = (int)($it['cantidad'] ?? 0);
             if ($idProd > 0 && $cant > 0) {
@@ -197,10 +193,8 @@ class VentasController
             }
         }
 
-        // 3) Factura y pago (el trigger rellena subtotal/IVA/total y datos del pago)
         $idFactura = $this->cerrarVenta($idVenta, $idMetodoPago, $cedulaCliente);
 
-        // Devolvemos el ID de la venta porque tu CarritoController lo usa para generar el TXT
         return $idVenta;
     }
 }

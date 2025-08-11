@@ -105,14 +105,14 @@ if (session_status() === PHP_SESSION_NONE) {
         </li>
         <?php endif; ?>
 
-        <!-- carrito> -->
+        <!-- carrito -->
         <li class="nav-item">
           <a class="nav-link px-3 rounded-pill <?= basename($_SERVER['PHP_SELF']) == 'carrito.php' ? 'active fw-bold' : '' ?>" href="carrito.php">
             <i class="bi bi-cart"></i> Carrito
           </a>
         </li>
 
-        <!-- ventas"> -->
+        <!-- ventas" -->
 
         <?php if (isset($_SESSION['rol']) && $_SESSION['rol'] !== 'CLIENTE'): ?>
         <li class="nav-item">

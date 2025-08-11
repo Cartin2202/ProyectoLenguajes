@@ -91,5 +91,4 @@ $roles   = $controller->listarRoles();
   </div>
 </section>
 
-<!-- JS de Bootstrap solo si no lo cargas en header.php -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>

@@ -1,4 +1,9 @@
 <?php 
+require_once __DIR__ . '/controllers/InventarioController.php';
+$ctrl    = new InventarioController();
+$tipos   = $ctrl->obtenerTiposMovimiento();
+$motivos = $ctrl->obtenerMotivos();
+
 include('views/partials/header.php');
 include('views/partials/navbar.php');
 ?> 
@@ -49,6 +54,5 @@ include('views/partials/navbar.php');
   </div>
 </section>
 
-<!-- Si no lo tienes ya en header.php, carga Bootstrap JS una sola vez -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 

@@ -6,21 +6,16 @@
   <meta charset="UTF-8" />
   <title>Productos</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <!-- Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Bootstrap Icons (para iconitos) -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
-  <!-- Tu CSS -->
   <link rel="stylesheet" href="assets/css/styles.css?v=2">
 </head>
 
 <body class="bg-light">
 
-  <!-- Contenedor principal con estilo de sección -->
   <section class="section-box rounded-4 shadow-sm my-4">
     <div class="container py-4">
 
-      <!-- Título + botón -->
       <div class="d-flex flex-wrap justify-content-between align-items-center mb-4 gap-2">
         <h2 class="m-0 fw-bold">Piedras &amp; Enchapes</h2>
         
@@ -31,7 +26,6 @@
         <?php endif;?>
       </div>
 
-      <!-- Filtro de categorías -->
       <form method="GET" action="productos.php" class="filter-bar rounded-4 p-3 mb-4">
         <div class="row g-2 align-items-center">
           <div class="col-12 col-md-auto">
@@ -51,7 +45,6 @@
         </div>
       </form>
 
-      <!-- Lista de productos -->
       <div class="row row-cols-1 row-cols-md-3 g-4">
         <?php if (!empty($productos)): ?>
           <?php foreach ($productos as $prod): ?>
@@ -68,7 +61,6 @@
                 </div>
 
                 <div class="card-footer bg-transparent border-0 d-flex flex-wrap gap-2 justify-content-between align-items-center">
-                  <!-- Botones admin -->
                   
                   <?php if (isset($_SESSION['rol']) && $_SESSION['rol'] !== 'CLIENTE' && $_SESSION['rol'] !== 'VENDEDOR'): ?>
                   <div class="d-flex gap-2">
@@ -84,7 +76,6 @@
                   </div>
                   <?php endif; ?>
 
-                  <!-- Añadir al carrito -->
                   <form method="post" action="carrito.php?action=add" class="d-flex align-items-center gap-2 ms-auto">
                     <input type="hidden" name="id" value="<?= $prod['ID_PRODUCTO'] ?>">
                     <input type="hidden" name="nombre" value="<?= htmlspecialchars($prod['NOMBRE']) ?>">
@@ -110,7 +101,6 @@
     </div>
   </section>
 
-  <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

@@ -2,7 +2,6 @@
 <?php include('views/partials/navbar.php'); ?>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
 
-<!-- Sección principal con título -->
  <?php if (isset($_SESSION['rol'])): ?>
   <section class="jumbotron text-center rounded-4 shadow p-5 mb-5 fade show">
       <div class="container">
@@ -18,13 +17,11 @@
       Variedad de piedras decorativas y enchapes de la mejor calidad.
     </p>
    
-    <!-- Imagen -->
     <div class="mb-4">
       <img src="./assets/img/piedras.jpg" class="img-fluid rounded" alt="Imagen principal" style="width: 500px; height: 400px; margin-right: 30px;">
 <img src="./assets/img/enchape.webp" class="img-fluid rounded" alt="Imagen principal" style="width: 500px; height: 400px; margin-left: 30px">
     </div>
    
-    <!-- Botón -->
     <div>
       <a href="productos.php" class="btn btn-lg btn-hero rounded-pill px-4">Ver catálogo</a>
     </div>
@@ -33,7 +30,6 @@
 </section>
  
  
-<!-- Sección bienvenida -->
 <section class="section-box rounded-4 shadow-sm mb-5">
   <div class="container py-5">
     <h2 class="mb-3 fw-bold">Bienvenido</h2>
@@ -44,7 +40,6 @@
   </div>
 </section>
  
-<!-- Sección "Sobre Nosotros" -->
 <section class="section-soft rounded-4 shadow-sm mb-4 text-center">
   <div class="container py-5">
     <h1 class="display-6 fw-bold">Sobre Nosotros</h1>
@@ -78,7 +73,6 @@
   </div>
 </section>
  
-<!-- Valores -->
 <section class="section-box2 rounded-4 shadow-sm">
   <div class="container py-5">
     <h3 class="mb-4 text-center fw-bold">Nuestros Valores</h3>

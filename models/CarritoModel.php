@@ -2,7 +2,7 @@
 class CarritoModel {
     public function __construct() {
         if (session_status() === PHP_SESSION_NONE) session_start();
-        if (!isset($_SESSION['carrito'])) $_SESSION['carrito'] = []; // array indexado por id_producto
+        if (!isset($_SESSION['carrito'])) $_SESSION['carrito'] = []; 
     }
 
     public function obtenerCarrito() {

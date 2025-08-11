@@ -3,7 +3,6 @@ require_once 'controllers/ProveedoresController.php';
 
 $controller = new ProveedoresController();
 
-// Ejecutar acciones según el parámetro `action`
 if (isset($_GET['action'])) {
     switch ($_GET['action']) {
         case 'registrar':
@@ -23,17 +22,14 @@ if (isset($_GET['action'])) {
             break;
     }
 
-    // Redireccionar luego de realizar acción para evitar reenvío de formularios
     header('Location: proveedores.php');
     exit();
 
     
 }
 
-// Obtener lista de proveedores para la vista
 $proveedores = $controller->listarProveedores();
 
-// Cargar vista
 include 'views/proveedores_view.php';
 
 

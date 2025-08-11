@@ -8,10 +8,9 @@ $controller = new ProveedoresController();
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $id_proveedor  = $_POST['id_proveedor'];
   $id_producto   = $_POST['id_producto'];
-  $precio_compra = $_POST['precio_compra']; // <<< faltaba
+  $precio_compra = $_POST['precio_compra']; 
   $controller->asociarProductoProveedor($id_proveedor, $id_producto, $precio_compra);
 
-  // Mensaje estilizado con tu section-box
   echo "<section class='section-box rounded-4 shadow-sm my-4'><div class='container py-3'>
           <div class='alert alert-success text-center rounded-4 m-0'>
             Producto asociado al proveedor correctamente.
@@ -28,11 +27,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   <meta charset="UTF-8" />
   <title>Asociar Producto a Proveedor</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <!-- Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Tu CSS -->
   <link rel="stylesheet" href="assets/css/styles.css?v=6">
-  <!-- (Opcional) Bootstrap Icons -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
 </head>
 <body>
@@ -71,7 +67,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   </div>
 </section>
 
-<!-- Bootstrap JS (si no está ya en tu header.php) -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

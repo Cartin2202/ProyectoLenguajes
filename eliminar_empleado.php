@@ -13,6 +13,4 @@ $cedula = $_GET['cedula'];
 $controller = new EmpleadosController();
 $controller->eliminarEmpleado($cedula);
 
-// Redirige al listado
-header("Location: empleados.php");
 exit;

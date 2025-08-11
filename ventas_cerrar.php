@@ -18,9 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   }
 }
 
-// (Opcional) incluye tus parciales si quieres navbar/header global
-// include('views/partials/header.php');
-// include('views/partials/navbar.php');
+
 ?>
 <!doctype html>
 <html lang="es">
@@ -28,11 +26,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   <meta charset="utf-8">
   <title>Cerrar venta #<?= htmlspecialchars($idVenta) ?></title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <!-- Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Tu CSS -->
   <link rel="stylesheet" href="assets/css/styles.css?v=1">
-  <!-- (Opcional) Icons -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
 </head>
 <body>
@@ -47,7 +42,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       </a>
     </div>
 
-    <!-- Resumen -->
     <div class="form-card rounded-4 p-3 p-md-4 mb-4">
       <div class="row g-3">
         <div class="col-md-4">
@@ -65,7 +59,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       </div>
     </div>
 
-    <!-- Form de cierre -->
     <form method="post" class="form-card rounded-4 p-3 p-md-4">
       <div class="row g-3 align-items-end">
         <div class="col-md-6">
@@ -90,7 +83,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   </div>
 </section>
 
-<!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

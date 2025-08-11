@@ -8,7 +8,6 @@ $controller = new InventarioController();
 
     <h2 class="fw-bold mb-4">Módulo de Inventario</h2>
 
-    <!-- Registrar movimiento -->
     <div class="form-card rounded-4 p-3 p-md-4 mb-4">
       <h5 class="fw-bold mb-3"><i class="bi bi-plus-circle me-2"></i>Registrar Movimiento</h5>
       <form method="POST" action="inventario.php?action=insertar">
@@ -46,7 +45,6 @@ $controller = new InventarioController();
       </form>
     </div>
 
-    <!-- Asociar producto -->
     <div class="form-card rounded-4 p-3 p-md-4 mb-4">
       <h5 class="fw-bold mb-3"><i class="bi bi-link-45deg me-2"></i>Asociar Producto a Movimiento</h5>
       <form method="POST" action="inventario.php?action=asociar">
@@ -72,7 +70,6 @@ $controller = new InventarioController();
       </form>
     </div>
 
-    <!-- Actualizar -->
     <div class="form-card rounded-4 p-3 p-md-4 mb-4">
       <h5 class="fw-bold mb-3"><i class="bi bi-arrow-repeat me-2"></i>Actualizar Movimiento</h5>
       <form method="POST" action="inventario.php?action=actualizar">
@@ -112,7 +109,6 @@ $controller = new InventarioController();
       </form>
     </div>
 
-    <!-- Eliminar -->
     <div class="form-card rounded-4 p-3 p-md-4 mb-4">
       <h5 class="fw-bold mb-3"><i class="bi bi-trash me-2"></i>Eliminar Movimiento</h5>
       <form method="POST" action="inventario.php?action=eliminar">
@@ -130,7 +126,6 @@ $controller = new InventarioController();
       </form>
     </div>
 
-    <!-- Lista -->
     <div class="rounded-4 overflow-hidden shadow-sm">
       <table class="table table-elegant align-middle mb-0">
         <thead>

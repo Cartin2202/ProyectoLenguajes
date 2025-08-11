@@ -9,7 +9,6 @@
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
     <div class="row g-4">
-      <!-- Listado -->
       <div class="col-lg-7">
         <div class="d-flex justify-content-between align-items-center mb-2">
           <h5 class="mb-0 fw-semibold">Listado</h5>
@@ -52,7 +51,6 @@
         </div>
       </div>
 
-      <!-- Detalle -->
       <div class="col-lg-5">
         <h5 class="fw-semibold mb-3">Detalle <?= $ventaId ? "Venta #$ventaId" : '' ?></h5>
 

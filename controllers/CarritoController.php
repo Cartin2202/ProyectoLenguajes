@@ -1,6 +1,6 @@
 <?php
 require_once __DIR__ . '/../models/CarritoModel.php';
-require_once __DIR__ . '/VentasController.php'; // Para checkout
+require_once __DIR__ . '/VentasController.php'; 
 
 class CarritoController
 {
@@ -38,12 +38,11 @@ class CarritoController
         return [
             'carrito' => $this->carrito->obtenerCarrito(),
             'total'   => $this->carrito->totalCarrito(),
-            'clientes' => $this->ventas->listarClientes(),     // usa tus SP
-            'metodos' => $this->ventas->listarMetodosPago(),  // usa tus SP
+            'clientes' => $this->ventas->listarClientes(),    
+            'metodos' => $this->ventas->listarMetodosPago(),  
         ];
     }
 
-    // controllers/CarritoController.php
     public function checkout($clienteId, $metodoPago)
     {
         if (session_status() === PHP_SESSION_NONE) session_start();
@@ -53,17 +52,14 @@ class CarritoController
 
         $ventaId = $this->ventas->registrarVenta((int)$clienteId, (int)$metodoPago, $items);
 
-        // Generar y guardar TXT (no se muestra)
+        // guarda y genera el txt de la factura
         $fileAbsPath = $this->ventas->generarFacturaTxt($ventaId);
 
         $this->carrito->vaciar();
 
-        // Guardar mensaje y redirigir
+        //mensaje que redirige 
         $_SESSION['flash_success'] = 'Factura generada y guardada en el sistema.';
-        // Si quieres, también puedes guardar la ruta por logs:
-        // $_SESSION['last_invoice_path'] = $fileAbsPath;
-
-        // Devuelve null; el controlador frontal hará el redirect.
+        
         return null;
     }
 }

@@ -18,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 try {
                     $ctrl = new CarritoController();
                     $ctrl->checkout($_POST['cliente_id'], $_POST['metodo_pago']);
-                    header('Location: carrito.php'); // vuelve al carrito
+                    header('Location: carrito.php'); 
                     exit;
                 } catch (Throwable $e) {
                     if (session_status() === PHP_SESSION_NONE) session_start();
@@ -44,7 +44,7 @@ if (isset($_GET['action'])) {
     exit;
 }
 
-$datos = $controller->obtenerDatosVista(); // carrito, total, clientes, metodos
+$datos = $controller->obtenerDatosVista();
 include 'views/partials/header.php';
 include 'views/partials/navbar.php';
 include 'views/carrito_view.php';
