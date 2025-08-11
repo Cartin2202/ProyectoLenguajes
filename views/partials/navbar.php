@@ -2,9 +2,8 @@
 if (session_status() === PHP_SESSION_NONE) {
   session_start();
 }
+
 ?>
-
-
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow sticky-top my-navbar">
   <div class="container">
     <a class="navbar-brand d-flex align-items-center gap-2" href="index.php">
@@ -25,13 +24,6 @@ if (session_status() === PHP_SESSION_NONE) {
           </a>
         </li>
 
-        <!-- Enlace Login -->
-        <li class="nav-item">
-          <a class="nav-link px-3 rounded-pill <?= basename($_SERVER['PHP_SELF'])=='login.php' ? 'active fw-bold' : '' ?>" href="login.php">
-            <i class="bi bi-box-arrow-in-right"></i> Login 
-          </a>
-        </li>
-
         <!-- Dropdown Productos y Categorías -->
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle px-3 rounded-pill <?= in_array(basename($_SERVER['PHP_SELF']), ['productos.php','categorias.php']) ? 'active fw-bold' : '' ?>" href="#" role="button" data-bs-toggle="dropdown">
@@ -44,31 +36,42 @@ if (session_status() === PHP_SESSION_NONE) {
         </li>
 
         <!-- Enlace Inventario -->
+         
+        <?php if (isset($_SESSION['rol']) && $_SESSION['rol'] !== 'CLIENTE'): ?>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle px-3 rounded-pill <?= in_array(basename($_SERVER['PHP_SELF']), ['inventario.php','registrar_movimiento.php','asociar_producto_movimiento.php','actualizar_movimiento.php','eliminar_movimiento.php','lista_movimientos.php']) ? 'active fw-bold' : '' ?>" href="#" role="button" data-bs-toggle="dropdown">
             <i class="bi bi-archive"></i> Inventario
           </a>
           <ul class="dropdown-menu dropdown-menu-end shadow">
-            <li><a class="dropdown-item" href="registrar_movimiento.php"><i class="bi bi-plus-circle"></i> Registrar Movimiento</a></li>
-            <li><a class="dropdown-item" href="asociar_producto_movimiento.php"><i class="bi bi-link-45deg"></i> Asociar Producto</a></li>
-            <li><a class="dropdown-item" href="actualizar_movimiento.php"><i class="bi bi-pencil-square"></i> Actualizar Movimiento</a></li>
-            <li><a class="dropdown-item" href="eliminar_movimiento.php"><i class="bi bi-trash"></i> Eliminar Movimiento</a></li>
+            <?php if (!isset($_SESSION['rol']) || $_SESSION['rol'] !== 'VENDEDOR'): ?>
+              <li><a class="dropdown-item" href="registrar_movimiento.php"><i class="bi bi-plus-circle"></i> Registrar Movimiento</a></li>
+              <li><a class="dropdown-item" href="asociar_producto_movimiento.php"><i class="bi bi-link-45deg"></i> Asociar Producto</a></li>
+              <li><a class="dropdown-item" href="actualizar_movimiento.php"><i class="bi bi-pencil-square"></i> Actualizar Movimiento</a></li>
+              <li><a class="dropdown-item" href="eliminar_movimiento.php"><i class="bi bi-trash"></i> Eliminar Movimiento</a></li>
+            <?php endif;?>  
             <li><a class="dropdown-item" href="lista_movimientos.php"><i class="bi bi-list-check"></i> Lista Movimientos</a></li>
+            
           </ul>
         </li>
-
+        <?php endif; ?>
         <!-- Dropdown Empleados -->
+         <?php if (isset($_SESSION['rol']) && $_SESSION['rol'] !== 'CLIENTE'): ?>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle px-3 rounded-pill <?= in_array(basename($_SERVER['PHP_SELF']), ['registrar_empleado.php','empleados.php']) ? 'active fw-bold' : '' ?>" href="#" role="button" data-bs-toggle="dropdown">
             <i class="bi bi-people"></i> Empleados
          </a>
           <ul class="dropdown-menu dropdown-menu-end shadow">
-           <li><a class="dropdown-item" href="registrar_empleado.php"><i class="bi bi-person-plus"></i> Registrar</a></li>
+            <?php if (!isset($_SESSION['rol']) || $_SESSION['rol'] !== 'VENDEDOR'): ?>
+              <li><a class="dropdown-item" href="registrar_empleado.php"><i class="bi bi-person-plus"></i> Registrar</a></li>
+              <?php endif; ?>
            <li><a class="dropdown-item" href="empleados.php"><i class="bi bi-search"></i> Consultar</a></li>
          </ul>
         </li>
+        <?php endif; ?>
 
         <!-- Dropdown Clientes -->
+         
+        <?php if (isset($_SESSION['rol']) && $_SESSION['rol'] !== 'CLIENTE'): ?>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle px-3 rounded-pill <?= in_array(basename($_SERVER['PHP_SELF']), ['clientes.php','insertar_clientes.php','editar_clientes.php','eliminar_clientes.php']) ? 'active fw-bold' : '' ?>" href="#" role="button" data-bs-toggle="dropdown">
             <i class="bi bi-people-fill"></i> Clientes
@@ -76,12 +79,18 @@ if (session_status() === PHP_SESSION_NONE) {
           <ul class="dropdown-menu dropdown-menu-end shadow">
             <li><a class="dropdown-item" href="clientes.php"><i class="bi bi-search"></i> Consultar</a></li>
             <li><a class="dropdown-item" href="insertar_clientes.php"><i class="bi bi-person-plus"></i> Registrar</a></li>
-            <li><a class="dropdown-item" href="editar_clientes.php"><i class="bi bi-pencil-square"></i> Editar</a></li>
-            <li><a class="dropdown-item" href="eliminar_clientes.php"><i class="bi bi-trash"></i> Eliminar</a></li>
+  
+            <?php if (!isset($_SESSION['rol']) || $_SESSION['rol'] !== 'VENDEDOR'): ?>
+              <li><a class="dropdown-item" href="editar_clientes.php"><i class="bi bi-pencil-square"></i> Editar</a></li>
+              <li><a class="dropdown-item" href="eliminar_clientes.php"><i class="bi bi-trash"></i> Eliminar</a></li>
+            <?php endif; ?>  
           </ul>
         </li>
+        <?php endif;?>
 
         <!-- Dropdown Proveedores -->
+         
+        <?php if (isset($_SESSION['rol']) && $_SESSION['rol'] !== 'CLIENTE' && $_SESSION['rol'] !== 'VENDEDOR'): ?>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle px-3 rounded-pill <?= in_array(basename($_SERVER['PHP_SELF']), ['proveedores.php','registrar_proveedor.php','asociar_producto_proveedor.php','actualizar_proveedor.php','eliminar_proveedor.php']) ? 'active fw-bold' : '' ?>" href="#" role="button" data-bs-toggle="dropdown">
             <i class="bi bi-truck"></i> Proveedores
@@ -94,6 +103,7 @@ if (session_status() === PHP_SESSION_NONE) {
            <li><a class="dropdown-item" href="eliminar_proveedor.php"><i class="bi bi-trash"></i> Eliminar</a></li>
           </ul>
         </li>
+        <?php endif; ?>
 
         <!-- carrito> -->
         <li class="nav-item">
@@ -103,19 +113,32 @@ if (session_status() === PHP_SESSION_NONE) {
         </li>
 
         <!-- ventas"> -->
+
+        <?php if (isset($_SESSION['rol']) && $_SESSION['rol'] !== 'CLIENTE'): ?>
         <li class="nav-item">
           <a class="nav-link px-3 rounded-pill <?= basename($_SERVER['PHP_SELF']) == 'ventas.php' ? 'active fw-bold' : '' ?>" href="ventas.php">
             <i class="bi bi-receipt"></i> Ventas
           </a>
         </li>
+        <?php endif; ?>
+
+        <!-- Enlace Login -->
+        <?php if (!isset($_SESSION['usuario'])): ?>
+        <li class="nav-item">
+          <a class="nav-link px-3 rounded-pill <?= basename($_SERVER['PHP_SELF'])=='login.php' ? 'active fw-bold' : '' ?>" href="login.php">
+            <i class="bi bi-box-arrow-in-right"></i> Login 
+          </a>
+        </li>
+        <?php endif; ?>
+
 
         <!-- Sesión activa -->
         <?php if (isset($_SESSION['usuario'])): ?>
           <li class="nav-item">
-            <span class="navbar-text me-3">Hola, <?= $_SESSION['usuario'] ?></span>
+            <span class="navbar-text me-3"><?= $_SESSION['usuario'] ?></span>
           </li>
           <li class="nav-item">
-            <a class="btn btn-sm btn-outline-dark" href="controllers/LogoutController.php">Cerrar sesión</a>
+            <a class="btn btn-outline-light" href="controllers/LogoutController.php">Cerrar sesión</a>
           </li>
         <?php endif; ?>
 

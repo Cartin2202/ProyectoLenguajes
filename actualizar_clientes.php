@@ -74,6 +74,13 @@ $cliente = $controller->obtenerClientesPorCedula($cedula);
         </div>
 
         <div class="col-md-4">
+          <label class="form-label fw-semibold">Contraseña</label>
+          <input type="password" name="pass" id="pass"
+                 class="form-control rounded-pill"
+                 value="<?= htmlspecialchars($cliente['PASS'] ?? '') ?>" required>
+        </div>
+
+        <div class="col-md-4">
           <label class="form-label fw-semibold">Fecha de nacimiento</label>
           <input type="date" name="fecha" id="fecha"
                  class="form-control rounded-pill"

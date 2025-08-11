@@ -1,3 +1,9 @@
+<?php 
+if (!isset($_SESSION['rol']) || ($_SESSION['rol'] !== 'ADMINISTRADOR' && $_SESSION['rol'] !== 'VENDEDOR' && $_SESSION['rol'] !== 'CLIENTE')) {
+    header("Location: login.php");
+    exit;
+}
+?>
 <?php
 if (session_status() === PHP_SESSION_NONE) session_start();
 

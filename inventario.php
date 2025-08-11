@@ -1,6 +1,5 @@
 <?php
 include 'views/partials/header.php'; 
-include 'views/partials/navbar.php'; 
 
 require_once('controllers/InventarioController.php');
 $controller = new InventarioController();

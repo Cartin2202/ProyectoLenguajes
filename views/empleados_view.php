@@ -25,7 +25,7 @@
             <th>Usuario</th>
             <th>Correo</th>
             <th>Rol</th>
-            <th style="width: 180px;">Acciones</th>
+            <th></th>
           </tr>
         </thead>
         <tbody>
@@ -40,6 +40,8 @@
                 <td><?= htmlspecialchars($empleado['CORREO']) ?></td>
                 <td><?= htmlspecialchars($empleado['ROL']) ?></td>
                 <td>
+                  
+                  <?php if (!isset($_SESSION['rol']) || $_SESSION['rol'] !== 'VENDEDOR'): ?>
                   <div class="d-inline-flex gap-2">
                     <a href="actualizar_empleado.php?cedula=<?= urlencode($empleado['CEDULA']) ?>"
                        class="btn btn-outline-secondary btn-sm rounded-pill" title="Editar">
@@ -52,6 +54,7 @@
                       <i class="bi bi-trash"></i> Eliminar
                     </a>
                   </div>
+                <?php endif; ?>
                 </td>
               </tr>
             <?php endforeach; ?>

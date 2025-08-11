@@ -376,3 +376,15 @@ section.about-section { background: #121212 !important; }
   .form-control.rounded-pill, .form-select.rounded-pill { padding-left: .9rem; padding-right: .9rem; }
 }
 
+.btn-dark-custom {
+  background-color: #000; 
+  color: #fff; 
+  border: none; 
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.btn-dark-custom:hover {
+  background-color: #fff;
+  color: #000; 
+  cursor: pointer;
+}

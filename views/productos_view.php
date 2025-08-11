@@ -23,9 +23,12 @@
       <!-- Título + botón -->
       <div class="d-flex flex-wrap justify-content-between align-items-center mb-4 gap-2">
         <h2 class="m-0 fw-bold">Piedras &amp; Enchapes</h2>
+        
+        <?php if (isset($_SESSION['rol']) && $_SESSION['rol'] !== 'CLIENTE' && $_SESSION['rol'] !== 'VENDEDOR'): ?>
         <a href="insertar_producto.php" class="btn btn-accent rounded-pill">
           <i class="bi bi-plus-lg"></i> Insertar Producto
         </a>
+        <?php endif;?>
       </div>
 
       <!-- Filtro de categorías -->
@@ -66,6 +69,8 @@
 
                 <div class="card-footer bg-transparent border-0 d-flex flex-wrap gap-2 justify-content-between align-items-center">
                   <!-- Botones admin -->
+                  
+                  <?php if (isset($_SESSION['rol']) && $_SESSION['rol'] !== 'CLIENTE' && $_SESSION['rol'] !== 'VENDEDOR'): ?>
                   <div class="d-flex gap-2">
                     <a href="editar_producto.php?id=<?= $prod['ID_PRODUCTO'] ?>" class="btn btn-outline-secondary btn-sm rounded-pill" title="Editar">
                       <i class="bi bi-pencil-square"></i>
@@ -77,6 +82,7 @@
                       <i class="bi bi-trash"></i>
                     </a>
                   </div>
+                  <?php endif; ?>
 
                   <!-- Añadir al carrito -->
                   <form method="post" action="carrito.php?action=add" class="d-flex align-items-center gap-2 ms-auto">
