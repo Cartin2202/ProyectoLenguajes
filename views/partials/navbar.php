@@ -69,7 +69,6 @@ if (session_status() === PHP_SESSION_NONE) {
         </li>
 
         <!-- Dropdown Clientes -->
-        <!-- Dropdown Clientes -->
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle px-3 rounded-pill <?= in_array(basename($_SERVER['PHP_SELF']), ['clientes.php','insertar_clientes.php','editar_clientes.php','eliminar_clientes.php']) ? 'active fw-bold' : '' ?>" href="#" role="button" data-bs-toggle="dropdown">
             <i class="bi bi-people-fill"></i> Clientes

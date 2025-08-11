@@ -55,9 +55,9 @@
             <div class="col">
               <div class="card product-card h-100 rounded-4 shadow-sm">
                 <div class="ratio ratio-16x9 product-thumb">
-                  <img src="./assets/img/sample-img.jpg" class="card-img-top rounded-top-4" alt="Imagen producto">
+                  <img src="<?= htmlspecialchars($prod['URL_IMAGEN']) ?>" class="card-img-top rounded-top-4" alt="Imagen producto">
                 </div>
-
+                
                 <div class="card-body">
                   <h5 class="card-title fw-bold mb-1"><?= htmlspecialchars($prod['NOMBRE']) ?></h5>
                   <p class="card-text text-muted mb-2"><?= htmlspecialchars($prod['DESCRIPCION']) ?></p>
